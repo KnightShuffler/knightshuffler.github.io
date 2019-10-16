@@ -1,4 +1,5 @@
 ---
+category: update
 excerpt: "New website section for my quantum computing notes is live!"
 ---
 
