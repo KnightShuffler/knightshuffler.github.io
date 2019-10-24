@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Swagat Kumar"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : #"I am an **amazing** person."
   location         : "Sunnyvale, CA"
   email            :
   links:
