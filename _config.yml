@@ -286,6 +286,11 @@ compress_html:
     envs: development
 
 
+# Collections
+collections:
+  projects:
+    output: false
+
 # Defaults
 defaults:
   # _posts
