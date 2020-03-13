@@ -292,6 +292,11 @@ collections:
   nielsen-chuang:
     output: true
 
+# Collections
+collections:
+  projects:
+    output: false
+
 # Defaults
 defaults:
   # _posts
