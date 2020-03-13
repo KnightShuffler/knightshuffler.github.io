@@ -1,0 +1,11 @@
+---
+layout: archive
+permalink: /projects/
+author_profile: true
+---
+
+<ul>
+    {% for proj in site.projects %}
+        <li> {{proj.name}} - {{ proj.description }} </li>
+    {% endfor %}
+</ul>
