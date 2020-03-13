@@ -1,0 +1,21 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<h3 class="archive__subtitle">Latest Note Updates</h3>
+{% for i in (0..2) %}
+    <div class="list__item">
+        <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        
+        <h4 class="archive__item-title" itemprop="headline">    
+            <a href="{{ site.data.note-updates[i].link }}" rel="permalink"> {{ site.data.note-updates[i].update }}
+    </a>
+        </h4>
+            <p class="page__meta"><i class="far fa-calendar" aria-hidden="true"></i>
+                {{ site.data.note-updates[i].date }}
+            </p>
+        </article>
+    </div>
+{% endfor %}
