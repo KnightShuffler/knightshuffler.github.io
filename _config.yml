@@ -285,6 +285,10 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  nielsen-chuang:
+    output: true
 
 # Defaults
 defaults:
@@ -306,6 +310,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # nielsen-chuang chapters
+  - scope:
+      path: ""
+      type: nielsen-chuang
+    values:
+      mathjax: true
+      permalink: /quantum-notes/books/nielsen-chuang/:path/
+      book: nielsen-chuang
+      layout: single
+      author_profile: true
+      share: true
+      toc: true
 
 
 

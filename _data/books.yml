@@ -1,0 +1,110 @@
+nielsen-chuang:
+  title: "Quantum Computation and Quantum Information"
+  author: "Michael A. Nielsen and Isaac L. Chuang"
+  base: "nielsen-chuang"
+  parts: true
+  toc:
+    - part: "Fundamental concepts"
+      chapters:
+        - chapter: "Introduction and overview"
+        - chapter: "Introduction to quantum mechanics"
+        - chapter: "Introduction to computer science"
+    - part: "Quantum computation"
+      chapters:
+        - chapter: "Quantum circuits"
+        - chapter: "The quantum Fourier transform and its applications"
+        - chapter: "Quantum search algorithms"
+        - chapter: "Quantum computers: physical realization"
+    - part: "Quantum information"
+      chapters:
+        - chapter: "Quantum noise and quantum operations"
+        - chapter: "Distance measures for quantum information"
+        - chapter: "Quantum error-correction"
+        - chapter: "Entropy and information"
+        - chapter: "Quantum information theory"
+  flavor: >
+    Cited by many as the bible for quantum computing, this was the first book
+    on the subject I bought. Going through it isn't a simple task, my notes
+    can't be seen as a replacement for actually reading through it yourself. I
+    used the 10th Anniversary edition of the book.
+
+qccs:
+  title: "Quantum Computing for Computer Scientists"
+  author: "Noson S. Yanofsky and Mirco A. Mannucci"
+  base: "qccs"
+  toc:
+    - chapter: "Complex Numbers"
+    - chapter: "Complex Vector Spaces"
+    - chapter: "The Leap form Classical to Quantum"
+    - chapter: "Basic Quantum Theory"
+    - chapter: "Architecture"
+    - chapter: "Algorithms"
+    - chapter: "Programming Languages"
+    - chapter: "Theoretical Computer Science"
+    - chapter: "Cryptography"
+    - chapter: "Information Theory"
+    - chapter: "Hardware"
+  flavor: >
+    As you could guess from the title, this book addresses the topic of quantum
+    computing from the perspective of a computer scientist. I used the kindle
+    edition of the book.
+
+democritius:
+  title: "Quantum Computing Since Democritius"
+  author: "Scott Aaronson"
+  base: "democritius"
+  toc:
+    - chapter: "Atoms and the void"
+    - chapter: "Sets"
+    - chapter: "Gödel, Turing, and friends"
+    - chapter: "Minds and machines"
+    - chapter: "Paleocomplexity"
+    - chapter: "P, NP, and friends"
+    - chapter: "Randomness"
+    - chapter: "Crypto"
+    - chapter: "Quantum"
+    - chapter: "Quantum Computing"
+    - chapter: "Penrose"
+    - chapter: "Decoherence and hidden variables"
+    - chapter: "Proofs"
+    - chapter: "How big are quantum states?"
+    - chapter: "Skepticism of quantum computing"
+    - chapter: "Learning"
+    - chapter: "Interactive proofs, circuit lower bounds, and more"
+    - chapter: "Fun with the Anthropic Principle"
+    - chapter: "Free will"
+    - chapter: "Time travel"
+    - chapter: "Cosmology and complexity"
+    - chapter: "Ask me anything"
+  flavor: >
+    Not a <i>standard</i> textbook like the others in the list so far, this is a
+    fun yet taxing read. It covers a lot without getting too far into the
+    technicalities of quantum computing.
+
+vlatko:
+  title: "Introduction to Quantum Information Science"
+  author: "Vlatko Vedral"
+  base: "vlatko"
+  parts: true
+  toc:
+    - part: "Classical and Quantum Information"
+      chapters:
+        - chapter: "Classical information"
+        - chapter: "Quantum mechanics"
+        - chapter: "Quantum information ― the basics"
+        - chapter: "Quantum communication with entanglement"
+        - chapter: "Quantum information I"
+        - chapter: "Quantum information II"
+    - part: "Quantum Entaglement"
+      chapters:
+        - chapter: "Quantum entanglement ― the basics"
+        - chapter: "Witnessing quantum entanglement"
+        - chapter: "Quantum entanglement in practise"
+        - chapter: "Measures of entanglement"
+    - part: "Quantum Computation"
+      chapters:
+        - chapter: "Quantum algorithms"
+        - chapter: "Entanglement, computation and quantum measurements"
+        - chapter: "Quantum error correction"
+        - chapter: "Outlook"
+  flavor: ""

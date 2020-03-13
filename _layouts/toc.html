@@ -1,0 +1,64 @@
+---
+layout: single
+read_time: false
+---
+
+<!-- The logic in assigning links to chapters assumes that chapters will only
+be published sequentially -->
+
+<script>
+    // used to pad numbers to two digits
+    function pad(d) {
+        return (d < 10) ? '0' + d.toString() : d.toString();
+    }
+</script>
+
+{% assign b = site.data.books[page.book] %}
+
+<h3>{{ b.title }} <br> by {{ b.author }} </h3>
+
+{% if b.parts %}
+    {% assign part_i = 1 %} <!-- part number -->
+    {% assign chap_i = 1 %} <!-- chapter number -->
+    <ol type="I">
+    {% for part in b.toc %}
+        <li>{{part.part}}</li> <!-- print the part name-->
+
+        <ol type="1" start = "{{chap_i}}", id='{{part_i}}'> <!-- maintain 
+                                                            chapter numbers,
+                                                            id is part number-->
+            {% for chapter in part.chapters %}
+                <!-- add a link to the list-->
+                <script>
+                    var a = document.createElement('a');
+                    a.setAttribute('href', 
+                        '{{site.baseurl}}/books/{{b.base}}/chapter-' + 
+                        pad({{chap_i}}));
+
+                    a.innerHTML = '<li>{{chapter.chapter}}</li>'
+                    document.getElementById('{{part_i}}').appendChild(a);
+                </script>
+                {% assign chap_i = chap_i | plus: 1 %} <!-- increment chapter-->
+            {% endfor %}
+        </ol>
+        {% assign part_i = part_i | plus: 1 %} <!-- increment part-->
+    {% endfor %}
+    </ol>
+{% else %}
+    <ol>
+        {% assign chap_i = 1 %}
+        {% for chapter in b.toc %}
+            <script>
+                var a = document.createElement('a');
+                a.setAttribute('href', 
+                    '{{site.baseurl}}/books/{{b.base}}/chapter-' + 
+                    pad({{chap_i}}));
+
+                a.innerHTML = '<li>{{chapter.chapter}}</li>'
+                document.getElementsByTagName('ol')[0].appendChild(a);
+            </script>
+
+            {% assign chap_i = chap_i | plus: 1 %} <!-- increment chapter-->
+        {% endfor %}
+    </ol>
+{% endif %}
