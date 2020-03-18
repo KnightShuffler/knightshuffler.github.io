@@ -287,6 +287,8 @@ compress_html:
 
 # Collections
 collections:
+  backgrounds:
+    output: true
   nielsen-chuang:
     output: true
 
@@ -310,6 +312,17 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # math background notes
+  - scope:
+      path: ""
+      type: "backgrounds"
+    values:
+      mathjax: true
+      permalink: /quantum-notes/backgrounds/:path/
+      layout: single
+      author_profile: true
+      share: true
+      toc: true
   # nielsen-chuang chapters
   - scope:
       path: ""
