@@ -4,3 +4,96 @@ permalink: /quantum-notes/
 ---
 
 I've been transcribing the notes I make while studying quantum computing.
+
+<style>
+    .grid {
+        display: grid;
+        gap: 1rem;
+
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .collapsible {
+        background-color: #585858;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 4px;
+
+        transition: all 500ms;
+    }
+
+    .active, .collapsible:hover {
+        background-color: #353535;
+        box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    }
+
+    .collapsible:hover {
+        transform: scale(1.1);
+    }
+
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #353535;
+        color: white;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="grid">
+    <button class="collapsible" title="math">Mathematical Background</button>
+    <button class="collapsible" title="book">Book Notes</button>
+</div>
+<div style="margin-top: 0.5em;">
+    <div class="content" id="math">
+        abc
+    </div>
+    <div class="content" id="book">
+        dasf
+    </div>
+</div>
+
+<script>
+    var buttons = document.getElementsByClassName("collapsible");
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+
+            // Get a list of the active buttons
+            var active = document.getElementsByClassName("active");
+            
+            // If none of the buttons are active, activate this button
+            if (active.length === 0) {
+                var content = document.getElementById(this.title);
+                content.style.maxHeight = content.scrollHeight + "px";
+                
+                this.classList.add("active");
+            }
+            // If this button is active, deactivate it
+            else if (active[0] === this) {
+                var content = document.getElementById(this.title);
+                content.style.maxHeight = null;
+                
+                this.classList.remove("active");
+            }
+            // If another button is active, deactivate it and then activate this button
+            else {
+                var content = document.getElementById(active[0].title);
+                content.style.maxHeight = null;
+                active[0].classList.remove("active");
+
+                content = document.getElementById(this.title);
+                content.style.maxHeight = content.scrollHeight + "px";
+                this.classList.add("active");
+            }
+        });
+    }
+</script>
