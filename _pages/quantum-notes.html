@@ -6,6 +6,10 @@ permalink: /quantum-notes/
 I've been transcribing the notes I make while studying quantum computing.
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     .grid {
         display: grid;
         gap: 1rem;
@@ -46,6 +50,15 @@ I've been transcribing the notes I make while studying quantum computing.
         color: white;
         border-radius: 4px;
     }
+
+    .clink {
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .clink:hover {
+        color: white;
+    }
 </style>
 
 <div class="grid">
@@ -54,10 +67,20 @@ I've been transcribing the notes I make while studying quantum computing.
 </div>
 <div style="margin-top: 0.5em;">
     <div class="content" id="math">
-        abc
+        <dl>
+        {% for bg in site.backgrounds %}
+            <dt> <a class="clink" href="{{ site.baseurl }}{{ bg.url }}" rel="permalink">{{ bg.title }}</a> </dt>
+            <dd> {{ bg.flavor }} </dd>
+        {% endfor %}
+        </dl>
     </div>
     <div class="content" id="book">
-        dasf
+        <dl>
+        {% for book in site.data.books %}
+            <dt> <a class="clink" href="{{ site.baseurl }}/quantum-notes/books/{{book[1].base}}/chapter-list/" rel="permalink"> {{book[1].title}} ― {{book[1].author}}  </a> </dt>
+            <dd> {{book[1].flavor}} </dd>
+        {% endfor %}
+        </dl>
     </div>
 </div>
 
@@ -76,6 +99,8 @@ I've been transcribing the notes I make while studying quantum computing.
                 content.style.maxHeight = content.scrollHeight + "px";
                 
                 this.classList.add("active");
+
+                this.scrollIntoView();
             }
             // If this button is active, deactivate it
             else if (active[0] === this) {
@@ -93,7 +118,10 @@ I've been transcribing the notes I make while studying quantum computing.
                 content = document.getElementById(this.title);
                 content.style.maxHeight = content.scrollHeight + "px";
                 this.classList.add("active");
+
+                this.scrollIntoView();
             }
         });
     }
 </script>
+
