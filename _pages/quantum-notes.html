@@ -41,7 +41,7 @@ I've been transcribing the notes I make while studying quantum computing.
         transform: scale(1.1);
     }
 
-    .content {
+    .content, .toc {
         padding: 0 18px;
         max-height: 0;
         overflow: auto;
@@ -51,26 +51,33 @@ I've been transcribing the notes I make while studying quantum computing.
         border-radius: 4px;
     }
 
-    .clink {
+    .content-link, .toc-link {
         font-weight: bold;
         transition: 0.2s;
+        text-decoration: underline;
     }
 
-    .clink:hover {
-        color: white;
+    .content-link:hover {
+        color:white;
+        cursor: pointer;
+    }
+
+    .toc-link:hover {
+        color:aqua;
+        cursor: pointer;
     }
 </style>
 
 <div class="grid">
     <button class="collapsible" title="math">Mathematical Background</button>
-    <button class="collapsible" title="book">Book Notes</button>
+    <button class="collapsible" title="book" id="book-btn">Book Notes</button>
 </div>
 
 <div style="margin-top: 0.5em;">
     <div class="content" id="math">
         <dl>
         {% for bg in site.backgrounds %}
-            <dt> <a class="clink" href="{{ bg.url }}" rel="permalink">{{ bg.title }}</a> </dt>
+            <dt> <a class="content-link" href="{{ bg.url }}" rel="permalink">{{ bg.title }}</a> </dt>
             <dd> {{ bg.flavor }} </dd>
         {% endfor %}
         </dl>
@@ -78,50 +85,105 @@ I've been transcribing the notes I make while studying quantum computing.
     <div class="content" id="book">
         <dl>
         {% for book in site.data.books %}
-            <dt> <a class="clink" href="/quantum-notes/books/{{book[1].base}}/chapter-list/" rel="permalink"> {{book[1].title}} ― {{book[1].author}}  </a> </dt>
+            <dt> <span class="toc-link" title="{{book[1].base}}">{{book[1].title}} ― {{book[1].author}}</span> </dt>
             <dd> {{book[1].flavor}} </dd>
         {% endfor %}
         </dl>
     </div>
+    
+    {% for book in site.data.books %}
+    <div class="toc" id="{{book[1].base}}">
+        Content goes here...<br/>
+        <button id="{{book[1].base}}-back">Back to book list</button>
+    </div>
+    {% endfor %}
 </div>
 
 <script>
+    var buttons = document.getElementsByClassName("collapsible");
+    var toc_links = document.getElementsByClassName("toc-link");
+    var active_box = null;
+
+    function showContent(id) {
+        var content = document.getElementById(id);
+        content.style.maxHeight = Math.min(content.scrollHeight, 320) + "px";
+        active_box = content;
+    }
+
+    function hideContent(id) {
+        var content = document.getElementById(id);
+        content.style.maxHeight = null;
+        active_box = null;
+    }
+
     function activateButton(button) {
-        var content = document.getElementById(button.title);
-        content.style.maxHeight = Math.min(content.scrollHeight, 240) + "px";
+        showContent(button.title);
         button.classList.add("active");
-        button.scrollIntoView();
+        // button.scrollIntoView();
     }
 
     function deactivateButton(button) {
-        var content = document.getElementById(button.title);
-        content.style.maxHeight = null;
-                
+        hideContent(button.title);
         button.classList.remove("active");
     }
 
-
-    var buttons = document.getElementsByClassName("collapsible");
-
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
-
-            // Get a list of the active buttons
-            var active = document.getElementsByClassName("active");
+            // // Get a list of the active buttons
+            // var active = document.getElementsByClassName("active");
             
-            // If none of the buttons are active, activate this button
-            if (active.length === 0) {
+            // // If none of the buttons are active, activate this button
+            // if (active.length === 0) {
+            //     activateButton(this);
+            // }
+            // // If this button is active, deactivate it
+            // else if (active[0] === this) {
+            //     deactivateButton(this);
+            // }
+            // // If another button is active, deactivate it and then activate this button
+            // else {
+            //     deactivateButton(active[0]);
+            //     activateButton(this);
+            // }
+
+            var active_button = document.getElementsByClassName("active")[0];
+            
+            if (active_box === null) {
                 activateButton(this);
             }
-            // If this button is active, deactivate it
-            else if (active[0] === this) {
-                deactivateButton(this);
-            }
-            // If another button is active, deactivate it and then activate this button
             else {
-                deactivateButton(active[0]);
-                activateButton(this);
+                // If one of the buttons is active (its content box is active)
+                if (active_button) {
+                    if (active_button === this) {
+                        deactivateButton(active_button);
+                    }
+                    else {
+                        deactivateButton(active_button);
+                        activateButton(this);
+                    }
+                }
+                // If none of the buttons are active, close the active box and activate this button
+                else {
+                    hideContent(active_box.id);
+                    activateButton(this);
+                }
             }
+        });
+    }
+
+    for (var i = 0; i < toc_links.length; i++) {
+        toc_links[i].addEventListener("click", function() {
+            // Deactivate the book button
+            deactivateButton(document.getElementById("book-btn"));
+            // Show the toc content
+            showContent(this.title);
+        });
+
+        document.getElementById(toc_links[i].title + "-back").addEventListener("click", function() {
+            // Hide toc content
+            hideContent(this.id.slice(0,-5));
+            // Activate the book button
+            activateButton(document.getElementById("book-btn"));
         });
     }
 </script>
