@@ -1,28 +1,18 @@
----
-layout: single
-read_time: false
----
-
-<!-- The logic in assigning links to chapters assumes that chapters will only
-be published sequentially -->
-
 <script>
     // used to pad numbers to two digits
     function pad(d) {
         return (d < 10) ? '0' + d.toString() : d.toString();
     }
 </script>
+<br/>
+<span style="font-weight: bold; padding-top: 1em;">{{ book[1].title }} ― {{ book[1].author }} </span>
 
-{% assign b = site.data.books[page.book] %}
-
-<h3>{{ b.title }} <br> by {{ b.author }} </h3>
-
-{% if b.parts %}
+{% if book[1].parts %}
     {% assign part_i = 1 %} <!-- part number -->
     {% assign chap_i = 1 %} <!-- chapter number -->
     <ol type="I">
-    {% for part in b.toc %}
-        <li>{{part.part}}</li> <!-- print the part name-->
+    {% for part in book[1].toc %}
+        <li style="font-weight: bold;">{{part.part}}</li> <!-- print the part name-->
 
         <ol type="1" start = "{{chap_i}}", id='{{part_i}}'> <!-- maintain 
                                                             chapter numbers,
@@ -32,7 +22,7 @@ be published sequentially -->
                 <script>
                     var a = document.createElement('a');
                     a.setAttribute('href', 
-                        '{{site.baseurl}}/quantum-notes/books/{{b.base}}/chapter-' + 
+                        '{{site.baseurl}}/quantum-notes/books/{{book[1].base}}/chapter-' + 
                         pad({{chap_i}}));
 
                     a.innerHTML = '<li>{{chapter.chapter}}</li>'
@@ -47,11 +37,11 @@ be published sequentially -->
 {% else %}
     <ol>
         {% assign chap_i = 1 %}
-        {% for chapter in b.toc %}
+        {% for chapter in book[1].toc %}
             <script>
                 var a = document.createElement('a');
                 a.setAttribute('href', 
-                    '{{site.baseurl}}/books/{{b.base}}/chapter-' + 
+                    '{{site.baseurl}}/books/{{book[1].base}}/chapter-' + 
                     pad({{chap_i}}));
 
                 a.innerHTML = '<li>{{chapter.chapter}}</li>'
