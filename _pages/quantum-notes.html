@@ -65,11 +65,12 @@ I've been transcribing the notes I make while studying quantum computing.
     <button class="collapsible" title="math">Mathematical Background</button>
     <button class="collapsible" title="book">Book Notes</button>
 </div>
+
 <div style="margin-top: 0.5em;">
     <div class="content" id="math">
         <dl>
         {% for bg in site.backgrounds %}
-            <dt> <a class="clink" href="{{ site.baseurl }}{{ bg.url }}" rel="permalink">{{ bg.title }}</a> </dt>
+            <dt> <a class="clink" href="{{ bg.url }}" rel="permalink">{{ bg.title }}</a> </dt>
             <dd> {{ bg.flavor }} </dd>
         {% endfor %}
         </dl>
@@ -77,7 +78,7 @@ I've been transcribing the notes I make while studying quantum computing.
     <div class="content" id="book">
         <dl>
         {% for book in site.data.books %}
-            <dt> <a class="clink" href="{{ site.baseurl }}/quantum-notes/books/{{book[1].base}}/chapter-list/" rel="permalink"> {{book[1].title}} ― {{book[1].author}}  </a> </dt>
+            <dt> <a class="clink" href="/quantum-notes/books/{{book[1].base}}/chapter-list/" rel="permalink"> {{book[1].title}} ― {{book[1].author}}  </a> </dt>
             <dd> {{book[1].flavor}} </dd>
         {% endfor %}
         </dl>
