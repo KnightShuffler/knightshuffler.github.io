@@ -44,7 +44,7 @@ I've been transcribing the notes I make while studying quantum computing.
     .content {
         padding: 0 18px;
         max-height: 0;
-        overflow: hidden;
+        overflow: auto;
         transition: max-height 0.2s ease-out;
         background-color: #353535;
         color: white;
@@ -85,6 +85,21 @@ I've been transcribing the notes I make while studying quantum computing.
 </div>
 
 <script>
+    function activateButton(button) {
+        var content = document.getElementById(button.title);
+        content.style.maxHeight = Math.min(content.scrollHeight, 240) + "px";
+        button.classList.add("active");
+        button.scrollIntoView();
+    }
+
+    function deactivateButton(button) {
+        var content = document.getElementById(button.title);
+        content.style.maxHeight = null;
+                
+        button.classList.remove("active");
+    }
+
+
     var buttons = document.getElementsByClassName("collapsible");
 
     for (var i = 0; i < buttons.length; i++) {
@@ -95,31 +110,16 @@ I've been transcribing the notes I make while studying quantum computing.
             
             // If none of the buttons are active, activate this button
             if (active.length === 0) {
-                var content = document.getElementById(this.title);
-                content.style.maxHeight = content.scrollHeight + "px";
-                
-                this.classList.add("active");
-
-                this.scrollIntoView();
+                activateButton(this);
             }
             // If this button is active, deactivate it
             else if (active[0] === this) {
-                var content = document.getElementById(this.title);
-                content.style.maxHeight = null;
-                
-                this.classList.remove("active");
+                deactivateButton(this);
             }
             // If another button is active, deactivate it and then activate this button
             else {
-                var content = document.getElementById(active[0].title);
-                content.style.maxHeight = null;
-                active[0].classList.remove("active");
-
-                content = document.getElementById(this.title);
-                content.style.maxHeight = content.scrollHeight + "px";
-                this.classList.add("active");
-
-                this.scrollIntoView();
+                deactivateButton(active[0]);
+                activateButton(this);
             }
         });
     }
