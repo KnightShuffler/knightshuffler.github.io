@@ -294,11 +294,6 @@ collections:
   projects:
     output: false
 
-# Collections
-collections:
-  projects:
-    output: false
-
 # Defaults
 defaults:
   # _posts
