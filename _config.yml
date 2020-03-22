@@ -291,9 +291,6 @@ collections:
     output: true
   nielsen-chuang:
     output: true
-
-# Collections
-collections:
   projects:
     output: false
 
