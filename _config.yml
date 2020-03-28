@@ -319,7 +319,7 @@ defaults:
     values:
       mathjax: true
       permalink: /quantum-notes/backgrounds/:path/
-      layout: single
+      layout: math-page
       author_profile: true
       share: true
       toc: true
@@ -331,7 +331,7 @@ defaults:
       mathjax: true
       permalink: /quantum-notes/books/nielsen-chuang/:path/
       book: nielsen-chuang
-      layout: single
+      layout: math-page
       author_profile: true
       share: true
       toc: true
