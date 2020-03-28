@@ -1,0 +1,24 @@
+---
+layout: single
+permalink: /update-logs/
+---
+
+<h1>Update Log</h1>
+{% for update in site.data.update-log %}
+    <div class="list__item">
+        <article>
+        
+        {% if update.link %}
+        <a href="{{ update.link }}" rel="permalink">
+        {% endif %}
+            <p style="font-size: smaller; margin-bottom: 0px;"> <b>{{ update.update }} </b> </p>
+        {% if update.link %}
+        </a>
+        {% endif %}
+            
+            <p class="page__meta">
+                <i class="far fa-calendar" aria-hidden="true"></i> {{ update.date }}
+        </p>
+        </article>
+    </div>
+{% endfor %}
