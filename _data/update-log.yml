@@ -1,0 +1,110 @@
+- date: "Mar 27, 2020"
+  update: "Added page for update log"
+  link: "/update-log/"
+
+- date: "Mar 27, 2020"
+  update: "Added \"Scroll to Top\" button on math pages"
+- date: "Mar 19, 2020"
+  update: "Moved chapter lists for books onto the \"Quantum Computing\" page"
+- date: "Mar 17, 2020"
+  update: "Migrated math background pages from other repository"
+- date: "Mar 12, 2020"
+  update: "Migrated Nielsen and Chuang notes from other repository"
+
+- date: "Mar 12, 2020"
+  update: "Made new \"Quantum Computing\" page to migrate notes content from other repository"
+  link: "/quantum-notes/"
+
+- date: "Mar 4, 2020"
+  update: "Updated home page to be an \"About Me\""
+  link: "../"
+
+- date: 2020-02-29
+  update: "Nielsen and Chuang Sections 2.2.4 - 2.2.7 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#224-distinguishing-quantum-states"
+  notes: true
+
+- date: 2020-02-19
+  update: "Nielsen and Chuang Sections 2.2 - 2.2.3 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#22-the-postulates-of-quantum-mechanics"
+  notes: true
+
+- date: 2020-02-14
+  update: "Nielsen and Chuang Sections 2.1.8 - 2.1.10 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#218-operator-functions"
+  notes: true
+
+- date: 2020-02-12
+  update: "Nielsen and Chuang Sections 2.1.5 - 2.1.7 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#215-eigenvectors-and-eigenvalues"
+  notes: true
+
+- date: 2020-02-11
+  update: "Nielsen and Chuang Section 2.1.4 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#214-inner-products"
+  notes: true
+
+- date: 2020-02-10
+  update: "Nielsen and Chuang Sections 2.1 - 2.1.3 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#21-linear-algebra"
+  notes: true
+
+- date: 2020-01-24
+  update: "Nielsen and Chuang Section 1.4.3 and 1.4.4 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#143-deutschs-algorithm"
+  notes: true
+
+- date: 2020-01-22
+  update: "Nielsen and Chuang Section 1.4 - 1.4.2 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#14-quantum-algorithms"
+  notes: true
+
+- date: 2020-01-21
+  update: "Proof of the no-cloning theorem added to Nielsen and Chuang Section 12.1"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-12/#proof-of-the-no-cloning-theorem"
+  notes: true
+
+- date: 2020-01-20
+  update: "Nielsen and Chuang Sections 1.3.5 - 1.3.7 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#135-qubit-copying-circuit"
+  notes: true
+
+- date: 2020-01-20
+  update: "Nielsen and Chuang Section 1.3.5 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#135-qubit-copying-circuit"
+  notes: true
+
+- date: 2020-01-19
+  update: "Nielsen and Chuang Section 1.3.4 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#134-quantum-circuits"
+  notes: true
+
+- date: 2020-01-18
+  update: "Nielsen and Chuang Section 1.3.2 and 1.3.3 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#132-multiple-qubit-gates"
+  notes: true
+
+- date: 2020-01-09
+  update: "Nielsen and Chuang Section 1.3 and 1.3.1 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#13-quantum-computation"
+  notes: true
+
+- date: 2020-01-08
+  update: "Nielsen and Chuang Section 1.2.1 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#121-multiple-qubits"
+  notes: true
+
+- date: 2020-01-06
+  update: "Nielsen and Chuang Section 1.2 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-01/#12-quantum-bits"
+  notes: true
+
+- date: 2019-10-25
+  update: "Linear algebra page added"
+  link: "/quantum-notes/backgrounds/linear-algebra/"
+  notes: true
+
+- date: 2019-10-19
+  update: "Complex numbers page added"
+  link: "/quantum-notes/backgrounds/complex-numbers/"
+  notes: true
