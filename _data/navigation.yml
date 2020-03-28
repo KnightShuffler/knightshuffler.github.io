@@ -4,3 +4,5 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Quantum Computing"
     url: /quantum-notes/
+  - title: "Update Log"
+    url: /update-logs/
