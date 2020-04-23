@@ -1302,7 +1302,9 @@ document.getElementById("nonortho-btn2").addEventListener("click", function(){
 > $$ \frac{ P_m | \psi \rangle }{ \sqrt{ p(m) } } . $$ 
 
 This is a special case of postulate 3 where the measurement operators are also
-orthogonal.
+orthogonal. In [section 2.2.8](#228-composite-systems), we'll see that
+projective measurements augmented with the ability to perform unitary operations
+are equivalent to Postulate 3.
 
 $$
 \begin{aligned}
@@ -1515,7 +1517,102 @@ regarded as equal because under the same state evolution (quantum circuit) there
 may be observable differences.
 
 ### 2.2.8 Composite systems
-Coming soon...
+> **Postulate 4:** The state space of a composite physical system is the tensor
+> product of the state spaces of the component physical systems. Moreover, if we
+> have systems numbered 1 through $$n$$, the joint state of the total system is
+> $$ | \psi_1 \rangle \otimes | \psi_2 \rangle \otimes ... \otimes | \psi_n \rangle  $$
+
+Often times, we will omit the $$\otimes$$ symbol when writing down expressions
+for quantum states. For example, if we have two systems, one in state $$ | A \rangle $$
+and the other in the state $$ | B \rangle $$, we can write the joint state in any
+of the following ways:
+
+$$
+| A \rangle \otimes | B \rangle \equiv | A \rangle | B \rangle \equiv | AB \rangle 
+$$
+
+When denoting quantum gates acting on single qubits of a composite system of
+qubits, we'll use a subscript to denote the index of the qubit that the gate acts
+on. For example, $$ X_2 $$ is the X gate applied to the second qubit.
+
+$$
+X_2 | 0 \rangle | 0 \rangle \equiv (I \otimes X) | 0 \rangle | 0 \rangle = | 0 \rangle | 1 \rangle 
+$$
+
+#### Projective measurements and composite systems
+Using composite systems, we can prove that projective measurements along with
+unitary dynamics are sufficient to implement a general measurement.
+
+Consider a quantum system Q with state space $$Q$$ and we wish to measure the
+system using the measurement operators $$\{M_m\}$$.  
+
+We can introduce an *ancilla system* with state space $$M$$ with an orthonormal
+basis $$\{m\}$$ that corresponds to the measurement operators.  
+This system can be considered as either a mathematical device used in the
+construction or as another physical system added into the mix.
+
+$$
+\begin{aligned}
+    \text{Let}\quad          & | 0 \rangle \in M \\
+    \text{and}\quad          & U : Q \otimes M \rightarrow Q \otimes M \\
+    \text{such that}\quad    & U ( | \psi \rangle | 0 \rangle ) = \sum_m (M_m | \psi \rangle ) | m \rangle
+\end{aligned}
+$$
+
+Since <script type="math/tex"> | m \rangle </script> are orthonormal and <script type="math/tex"> \sum_m M_m^\dagger M_m = I </script>
+
+$$
+\begin{aligned}
+      & ( \langle \varphi | \langle 0 | ) U^\dagger U ( | \psi \rangle | 0 \rangle ) \\
+    = & \left( \sum_m (\langle \varphi | M_m^\dagger) \langle m |  \right) \left( \sum_n (M_n | \psi \rangle) | n \rangle   \right) \\
+    = & \sum_{m,n} \langle \varphi | M_m^\dagger M_n | \psi \rangle \langle m | n \rangle \\
+    = & \sum_{m = n} \langle \varphi | M_m^\dagger M_m | \psi \rangle \langle m | m \rangle \\
+    = & \langle \varphi | \psi \rangle
+\end{aligned}
+$$
+
+Such a unitary operation preserves the inner products of the original system for
+joint states like $$ | \psi \rangle | 0 \rangle $$. We can extend this unitary to
+be defined over the remaining state space, though we are not concerned with the
+action on those states.
+
+If we perform a projective measurement on the ancilla system with the projection
+operators <script type="math/tex"> P_m = I_Q \otimes | m \rangle \langle m | </script> when the joint state
+of the system is <script type="math/tex"> U ( | \psi \rangle | 0 \rangle ) </script> :
+
+$$
+\text{ The probability of measuring the outcome m } \\
+\begin{aligned}
+    p(m) = & ( \langle \psi \langle 0 | ) U^\dagger  P_m U ( | \psi \rangle | 0 \rangle ) \\
+         = & \left( \sum_i (\langle \psi | M_i^\dagger) \langle i | \right) (I_Q \otimes | m \rangle \langle m | ) \left( \sum_j (M_j | \psi \rangle) | j \rangle \right) \\
+         = & \left( \sum_i (\langle \psi | M_i^\dagger) \langle i | \right) \left( \sum_j M_j | \psi \rangle \otimes | m \rangle \langle m | j \rangle \right) \\
+         = & \left( \sum_i (\langle \psi | M_i^\dagger) \langle i | \right) M_m | \psi \rangle \otimes | m \rangle \\
+         = & \sum_i \langle \psi | M_i^\dagger M_m | \psi \rangle \langle i | m \rangle \\
+         = & \langle \psi | M_m^\dagger M_m | \psi \rangle
+\end{aligned} \\
+\text {The joint state after measurement} \\
+\begin{aligned}
+      & \frac{P_m U ( | \psi \rangle | 0 \rangle )}{\sqrt{p(m)}} = \frac{ M_m | \psi \rangle \otimes | m \rangle  }{\langle \psi | M_m^\dagger M_m | \psi \rangle}
+\end{aligned}
+$$
+
+The state of Q after the measurement is thus
+
+$$
+    \frac{M_m | \psi \rangle }{\sqrt{\langle \psi | M_m^\dagger M_m | \psi \rangle}}
+$$
+
+as described by Postulate 3.
+
+#### Entangled states
+It is possible for the state of a composite quantum system to be such that it
+can not be decomposed as a tensor product of states of the component systems.
+Such states are called *entangled states*.  
+
+$$
+\frac{ | 00 \rangle + | 11 \rangle }{\sqrt{2}}
+$$
+is an example of an entangled state.
 
 ### 2.2.9 Quantum mechanics: a global view
 Coming soon...
@@ -1531,4 +1628,3 @@ Coming soon...
 
 ## 2.6 EPR and the Bell inequality
 Coming soon...
-
