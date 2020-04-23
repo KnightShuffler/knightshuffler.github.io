@@ -1,0 +1,61 @@
+{
+	// Place your quantum-notes workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	//      "scope": "javascript,typescript",
+	//      "prefix": "log",
+	//      "body": [
+	//              "console.log('$1');",
+	//              "$2"
+	//      ],
+	//      "description": "Log output to console"
+	// }
+
+	"img": {
+			"prefix": "img",
+			"body": "<img src=\"{{ site.url }}{{ site.baseurl }}/assets/$1\">$0",
+			"description": "img tag"
+	},
+
+	"ket": {
+			"prefix": "ket",
+			"body": "| $1 \\rangle $0",
+			"description": "Mathjax ket"
+	},
+
+	"bra": {
+			"prefix": "bra",
+			"body": "\\langle $1 | $0",
+			"description": "Mathjax bra"
+	},
+
+	"ket-bra": {
+			"prefix": "ket-bra",
+			"body": "| $1 \\rangle \\langle $2 | $0",
+			"description": "Mathjax ket-bra outer product"
+	}
+	,
+
+	"bra-ket": {
+			"prefix": "bra-ket",
+			"body": "\\langle $1 | $2 \\rangle $0",
+			"description": "Mathjax bra-ket inner product"
+	},
+
+	"bra-operator-ket":{
+			"prefix": "bra-op-ket",
+			"body": "\\langle $1 | $2 | $3 \\rangle $0",
+			"description": "Mathjax bra-operator-ket inner product/expectation"
+	},
+
+	"mathscript": {
+			"prefix": "math",
+			"body" : "<script type=\"math/tex\"> $1 </script>$0",
+			"description": "Insert an html tag to insert a mathjax environment"
+	},
+}
