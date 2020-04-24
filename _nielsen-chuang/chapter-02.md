@@ -1615,7 +1615,29 @@ $$
 is an example of an entangled state.
 
 ### 2.2.9 Quantum mechanics: a global view
-Coming soon...
+**Review of the postulates:**
+1. Specifies how the state of an isolated quantum system is described.
+2. Describes how the state of a closed quantum system evolves.
+3. Describes how to extract information from the system by measuring it.
+4. Tells us how to describe the states of composite quantum systems by
+combining the states of its components.
+
+The world view we get from the perspective of quantum mechanics is very
+different from our intuition. Quantities like position, energy and velocity
+which we usually consider to be universally observable parts of classical systems
+are hidden in quantum systems.  
+In fact, all information about a quantum system is a part of its state vector
+which is also hidden from us. We can derive observable quantities by measuring
+the system but doing so alters the state of the system in a non-deterministic
+way.
+
+The way we perceive the world, at the scales of time and space that we are used
+to observing can be derived as an approximate description of the universe that
+quantum mechanics describes.
+
+It is because of the way quantum mechanics describes the world so differently
+than what we are used to that it is an interesting framework to extend our
+capabilities for computation and information processing.
 
 ## 2.3 Application: superdense coding
 Coming soon...
