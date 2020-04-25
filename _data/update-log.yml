@@ -1,10 +1,17 @@
+- date: "Apr 24, 2020"
+  update: "Nielsen and Chuang Section 2.3 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#23-application-superdense-coding"
+  notes: true
+
 - date: "Apr 23, 2020"
   update: "Nielsen and Chuang Section 2.2.9 content added"
   link: "/quantum-notes/books/nielsen-chuang/chapter-02/#229-quantum-mechanics-a-global-view"
+  notes: true
 
 - date: "Apr 22, 2020"
   update: "Nielsen and Chuang Section 2.2.8 content added"
   link: "/quantum-notes/books/nielsen-chuang/chapter-02/#228-composite-systems"
+  notes: true
 
 - date: "Mar 27, 2020"
   update: "Added page for update log"

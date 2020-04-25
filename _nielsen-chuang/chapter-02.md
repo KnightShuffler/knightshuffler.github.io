@@ -1640,7 +1640,70 @@ than what we are used to that it is an interesting framework to extend our
 capabilities for computation and information processing.
 
 ## 2.3 Application: superdense coding
-Coming soon...
+Imagine Alice wants to send Bob two bits of information through a classical
+communication channel. There isn't any way for her to do this without sending
+a minimum of two bits across the channel.  
+Even using a quantum communication channel, there would need to be a minimum of
+two qubits present in the system to transmit two bits. But in this case, Alice
+would be able to give Bob her bit string by sending over only a single qubit.
+This is called superdense coding, and it requires the two qubits to have been
+entangled.
+
+Both Alice and Bob have one qubit, that are part of an entangled pair. The two
+qubits are in the joint state:
+
+$$
+| \psi \rangle = \frac{ | 0 \rangle_A | 0 \rangle_B + | 1 \rangle_A | 1 \rangle_B }{\sqrt{2}}
+$$
+
+Depending on the bit string that Alice wants to send Bob, she will apply a
+quantum gate on her qubit.
+
+<figure>
+    <table>
+    <tr style="border-bottom: 2px solid; background-color: #CFD4D3">
+        <th style="border-right: 1px solid; text-align:center">Bit String</th>
+        <th style="border-right: 1px solid; text-align:center">Gate</th>
+        <th style="text-align:left">Final State</th>
+    </tr>
+    <tr>
+        <td style="border-right: 1px solid; text-align:center">00</td>
+        <td style="border-right: 1px solid; text-align:center"> <script type="math/tex"> I </script> </td>
+        <td style="text-align:left"> <script type="math/tex"> (I_A \otimes I_B) | \psi \rangle = \frac{1}{\sqrt{2}}( | 00 \rangle + | 11 \rangle  ) </script> </td>
+    </tr>
+    <tr>
+        <td style="border-right: 1px solid; text-align:center">01</td>
+        <td style="border-right: 1px solid; text-align:center"> <script type="math/tex"> Z </script> </td>
+        <td style=""> <script type="math/tex"> (Z_A \otimes I_B) | \psi \rangle = \frac{1}{\sqrt{2}}( | 00 \rangle - | 11 \rangle  ) </script> </td>
+    </tr>
+    <tr>
+        <td style="border-right: 1px solid; text-align:center">10</td>
+        <td style="border-right: 1px solid; text-align:center"> <script type="math/tex"> X </script> </td>
+        <td style="text-align:left"> <script type="math/tex"> (X_A \otimes I_B) | \psi \rangle = \frac{1}{\sqrt{2}}( | 10 \rangle + | 01 \rangle  ) </script> </td>
+    </tr>
+    <tr>
+        <td style="border-right: 1px solid; text-align:center">11</td>
+        <td style="border-right: 1px solid; text-align:center"> <script type="math/tex"> iY </script> </td>
+        <td style="text-align:left"> <script type="math/tex"> (iY_A \otimes I_B) | \psi \rangle = \frac{1}{\sqrt{2}}( -| 10 \rangle + | 01 \rangle  ) </script> </td>
+    </tr>
+    </table>
+    <figcaption>Initial setup for superdense coding</figcaption>
+</figure>
+
+Subscripts were omitted from the kets in the table, the first (left) qubit
+belongs to Alice and the other to Bob.
+
+The four possible states that the system can now be in form an orthonormal basis
+called the *Bell Basis*, and each of these states are called the *Bell States*
+or *EPR Pairs*.
+
+After this setup, Alice sends her qubit to Bob through the quantum channel.
+Since the four states are orthonormal, Bob can measure the qubits in the Bell
+basis and based on the outcome, he can infer which bit string Alice was sending.
+
+> From this we see that information is physical, and surprising physical
+> theories such as quantum mechanics may predict surprising information
+> processing abilities.
 
 ## 2.4 The density operator
 Coming soon...
