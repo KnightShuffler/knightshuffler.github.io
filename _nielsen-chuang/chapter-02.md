@@ -1706,7 +1706,18 @@ basis and based on the outcome, he can infer which bit string Alice was sending.
 > processing abilities.
 
 ## 2.4 The density operator
-Coming soon...
+So far we have discussed a formulation of quantum mechanics using state vectors,
+but there is another formulation that makes use of *densityr operators* or
+*density matrices* instead.  
+This formulation is mathematically equivalent, but provides a much more
+convenient way to describe some commonly encountered scenarios in quantum
+mechanics.
+
+### 2.4.1 Ensembles of quantum states
+
+### 2.4.2 General properties of the density operator
+
+### 2.4.3 The reduced density operator
 
 ## 2.5 The Schmidt decomposition and purifications
 Coming soon...
