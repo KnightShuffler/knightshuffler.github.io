@@ -1714,10 +1714,140 @@ convenient way to describe some commonly encountered scenarios in quantum
 mechanics.
 
 ### 2.4.1 Ensembles of quantum states
+The density operator formulation of quantum mechanics makes it easier to
+describe a quantum system whose state is not completely known.  
+
+This may sound strange since we have mentioned that the state of a quantum
+system is hidden. However, there are times when know what the state of a quantum
+system is. The moments after initializing and measuring the systems are two
+examples. From this, it follows that if we know how the state evolves in a
+system (like in a quantum circuit), we will be able to derive the complete
+knowledge of the system's state.
+
+However when we talk about contemporary quantum computers, they are quite
+susceptible to noise and are not perfect implementations of the theoretical
+model of quantum computers. Because of this, we are unable to ascertain
+**complete** knowledge of these systems' states. If we know the error rates
+of these computers, we can formulate a model that encapsulates the notion of
+the system being in some set of states with different probabilities.
+
+Imagine a quantum system that is in one of the states $$ | \psi_i \rangle $$
+with a probability of $$ p_i $$. We call this an *ensemble of **pure states***,
+represented $$ \{p_i, | \psi_i \rangle \} $$.
+
+The density operator for this operator is defined to be
+
+$$
+    \rho = \sum_i p_i | \psi_i \rangle \langle \psi_i | 
+$$
+
+All of the postulates of quantum mechanics can be rewritten in terms of the
+density operator without making use of state vectors. You can find these
+postulates rewritten in [section 2.4.2](#242-general-properties-of-the-density-operator).
+
+#### Unitary evolution
+If a unitary operator acts on the ensemble of states described above, the state
+of the system can be described by the ensemble $$ \{p_i, U | \psi_i \rangle  \} $$.  
+That is to say, if the state was initially $$ | \psi_i \rangle $$, after the
+unitary acts on the system, it will be in the state $$ U | \psi_i \rangle $$.
+
+We can calculate the density operator of this new ensemble to be:
+
+$$
+\begin{aligned}
+    \rho \xrightarrow[]{U}  & \sum_i p_i (U | \psi_i \rangle  )( \langle \psi_i | U^\dagger ) \\
+                            & = U \left( \sum_i p_i | \psi_i \rangle \langle \psi_i | \right) U^\dagger \\
+                            & = U \rho U^\dagger
+\end{aligned}
+$$
+
+#### Measurements
+Suppose we measure the system described by an ensemble with measurement
+operators $$ M_m $$.  
+If the initial state of the system was $$ | \psi_i \rangle $$, then the
+probability of measuring the outcome $$m$$ is
+
+$$
+\begin{aligned}
+    p(m|i)  & = \langle \psi_i | M_m^\dagger M_m | \psi_i \rangle \\
+            & = \text{tr}( M_m | \psi_i \rangle \langle \psi_i | M_m^\dagger )
+\end{aligned}
+$$
+
+This would leave the system in the the post measurement state
+
+$$
+    | \psi_i^m \rangle = \frac{M_m | \psi_i \rangle }{\sqrt{p(m|i)}}
+$$
+
+By the law of total probability, we can calculate the probability of measuring
+the system with outcome $$m$$ as
+
+$$
+\begin{aligned}
+    p(m)    & = \sum_i p(m,i) \\
+            & = \sum_i p(m|i) p_i \\
+            & = \sum_i \text{tr}( M_m | \psi_i \rangle \langle \psi_i | M_m^\dagger ) p_i \\
+            & = \sum_i \text{tr}( p_i M_m | \psi_i \rangle \langle \psi_i | M_m^\dagger ) \\
+            & = \text{tr}\left( M_m \left(\sum_i p_i | \psi_i \rangle \langle \psi_ | \right) M_m^\dagger \right) \\
+            & = \text{tr}( M_m \rho M_m^\dagger)
+\end{aligned}
+$$
+
+The new ensemble will be $$ \{p(i|m), | \psi_i^m \rangle \} $$, which has the
+density operator
+
+$$
+\begin{aligned}
+    \rho_m  & = \sum_i p(i|m) | \psi_i^m \rangle \langle \psi_i^m | \\
+            & = \sum_i \frac{p(m,i)}{p(m)} \frac{ M_m | \psi_i \rangle }{\sqrt{p(m|i)}} \frac{ \langle \psi_i | M_m^\dagger }{\sqrt{p(m|i)}} \\
+            & = \sum_i \frac{p(m|i) p_i}{p(m)} \frac{ M_m | \psi_i \rangle \langle \psi_i | M_m^\dagger }{p(m|i)} \\
+            & = \frac{1}{p(m)} M_m \left( \sum_i p_i | \psi_i \rangle \langle \psi_i | \right) M_m^\dagger \\
+            & = \frac{ M_m \rho M_m^\dagger }{ \text{tr}(M_m \rho M_m^\dagger) }
+\end{aligned}
+$$
+
+#### Pure states and mixed states
+A quantum system whose state is known exactly is said to be in a *pure state*. The
+density operator of a pure state is of the form $$ \rho = | \psi \rangle \langle \psi | $$.
+
+Otherwise, the system is said to be in a *mixed state*. Some sources will also
+refer to quantum states as mixed states if they assume that the system will not
+be in a pure state by default.
+
+Generally, pure states are described by state vectors and mixed states by
+density operators.
+
+#### Mixtures
+Imagine an ensemble of mixed states $$ \{p_i, \rho_i\} $$. THe density operator
+for this is
+
+$$
+    \rho = \sum_i p_i \rho_i
+$$
+
+We call $$\rho$$ a *mixture* of states $$ \rho_i $$ with probabilites $$ p_i $$.
+
+This concept is used when analyzing quantum noise and its effect on our
+knowledge on the quantum state.
+
+For example, imagine after measuring a system described by a mixed state, the
+measurement outcome $$m$$ is lost.  
+We would then refer to the state of the system as a mixture:
+
+$$
+\begin{aligned}
+    \rho^\prime & = \sum_m p(m) \rho_m \\
+                & = \sum_m \text{tr}( M_m \rho M_m^\dagger ) \frac{M_m \rho M_m^\dagger}{\text{tr}(M_m \rho M_m^\dagger)} \\
+                & = \sum_m M_m \rho M_m^\dagger
+\end{aligned}
+$$
 
 ### 2.4.2 General properties of the density operator
+Coming soon...
 
 ### 2.4.3 The reduced density operator
+Coming soon...
 
 ## 2.5 The Schmidt decomposition and purifications
 Coming soon...

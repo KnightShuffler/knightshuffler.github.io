@@ -1,3 +1,8 @@
+- date: "Apr 26, 2020"
+  update: "Nielsen and Chuang Section 2.4.1 content added"
+  link: "/quantum-notes/books/nielsen-chuang/chapter-02/#24-the-density-operator"
+  notes: true
+
 - date: "Apr 24, 2020"
   update: "Nielsen and Chuang Section 2.3 content added"
   link: "/quantum-notes/books/nielsen-chuang/chapter-02/#23-application-superdense-coding"
