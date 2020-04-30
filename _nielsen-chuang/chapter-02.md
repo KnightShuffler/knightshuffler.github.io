@@ -1844,7 +1844,65 @@ $$
 $$
 
 ### 2.4.2 General properties of the density operator
-Coming soon...
+The class of operators that are density operators are characterized by the
+following theorem:
+
+> **Theorem 2.5:** An operator <script type="math/tex"> \rho </script> is the
+> density operator associated to some ensemble <script type="math/tex"> \{ p_i, | \psi_i \rangle \} </script>
+> if and only if it satisfies the conditions:
+> 1. $$ \text{tr}(\rho) = 1 $$ (Trace condition)
+> 2. $$ \rho $$ is a positive operator (Positivity condition)
+
+<div class="proof" id="thm-2.5">
+</div>
+
+With this characterization, we can reformulate the postulates of quantum
+mechanics, without the need of state vectors. Instead, we use unit trace,
+positive operators that we call *density operators*.
+
+> **Postulate 1:** Associated to any isolated physical system is a Hilbert space
+> known as the state space of the system. The system is completely described by
+> its density operator which is a positive operator <script type="math/tex"> \rho </script>
+> with trace one, acting on the state space of the system. If a quantum system
+> is in the state <script type="math/tex"> \rho_i </script> with probability
+> <script type="math/tex"> p_i </script>, then the density operator for the
+> system is <script type="math/tex"> \sum_i p_i \rho_i </script>.
+
+> **Postulate 2:** The evolution of a closed quantum system s described by a
+> unitary transformation. That is, the state <script type="math/tex"> \rho </script>
+> of the system at time <script type="math/tex"> t_1 </script> is related to the
+> state of the system at time <script type="math/tex"> t_2 </script> by a unitary
+> operator <script type="math/tex"> U </script> which depends only on times <script type="math/tex"> t_1 </script>
+> and <script type="math/tex"> t_2 </script>
+> 
+> $$ \rho^\prime = U \rho U^\dagger $$
+
+> **Postulate 3:** Quantum measurements are described by a collection $$ \{M_m\} $$
+> of *measurement operators*. These are operators acting on the state space of
+> the system being measured. The index $$ m $$ refers to the measurement
+> outcomes that may occur in the experiment. If the state of the quantum system
+> is $$ \rho $$ immediately before the measurement then the probability that
+> result $$ m $$ occurs is given by
+> 
+> <script type="math/tex; mode=display"> p(m) = \text{tr}(M_m \rho M_m^\dagger) </script>
+> 
+> and the state of the system after the measurement is
+> 
+> $$ \frac{M_m \rho M_m^\dagger}{\text{tr}(M_m \rho M_m^\dagger)} $$
+> 
+> The measurement operators satisfy the *completeness equation*
+> 
+> $$ \sum_m M_m^\dagger M = I $$
+
+> **Postulate 4:** The state space of a composite physical system is the tensor
+> product of the state spaces of the component physical systems. Moreover, if we
+> have systems numbered 1 through $$n$$, the joint state of the total system is
+> $$ \rho_1 \otimes \rho_2 \otimes ... \otimes \rho_n  $$.
+
+This reformulation is equivalent to the state vector approach and is more useful
+when describing  
+* systems whose state is not known
+* subsystems of composite quantum systems
 
 ### 2.4.3 The reduced density operator
 Coming soon...
