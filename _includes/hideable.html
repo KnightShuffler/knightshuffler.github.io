@@ -1,0 +1,48 @@
+<style>
+    .hideable {
+        transition: max-height 0.2s ease-out;
+        /* background-color: #353535;
+        color: white; */
+        border-style: solid;
+        border-radius: 4px;
+        max-height: 0;
+    }
+    
+    .h {
+        display: none;
+    }
+</style>
+
+<script>
+    buttons = document.getElementsByClassName("show-hide-btn");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            var id = String(this.id).slice(0,-4);
+            var hideable = document.getElementById(id);
+            if (hideable.classList.contains("h")) {
+                show_function(id);
+                this.value = "Hide" + this.value.slice(4);
+            }
+            else {
+                hide_function(id);
+                this.value = "Show" + this.value.slice(4);
+            }
+        });
+    }
+
+    function hide_function( id ) {
+        var hideable = document.getElementById(id);
+        hideable.style.maxHeight = "0px";
+        hideable.style.padding = "0em";
+        // hideable.style.display = "none";
+        hideable.classList.add("h");
+    }
+
+    function show_function( id ) {
+        var hideable = document.getElementById(id);
+        // hideable.style.display = "block";
+        hideable.classList.remove("h");
+        hideable.style.padding = "0.5em";
+        hideable.style.maxHeight = hideable.scrollHeight + "px";
+    }
+</script>
