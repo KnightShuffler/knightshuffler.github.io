@@ -712,9 +712,9 @@ in this case.
 ie. the linear operators $$ A $$ and $$ B $$ commute if and only if they have
 the same eigenvectors.
 
-<input style="display:none;" type="button" value="Show Proof" id="btn">
+<input type="button" class="show-hide-btn" value="Show Proof" id="simultaneous-diagonalization-btn">
 
-<div id="proof" style="display: none;">
+<div class="hideable h" id="simultaneous-diagonalization">
 <strong>Proof:</strong><br/>
 <p><strong>I. </strong>Assume <script type="math/tex"> A </script> and <script type="math/tex"> B </script>
 have diagonalizations in the same orthonormal basis.</p>
@@ -758,36 +758,7 @@ $$
 \end{aligned}
 $$
 </p>
-
-<input type="button" value="Hide Proof" id="btn2" >
-
 </div>
-
-<script>
-    document.getElementById("btn").addEventListener("click", function(){
-        var proof = document.getElementById("proof");
-
-        if (proof.style.display == "none") {
-            proof.style.display = "block";
-            document.getElementById("btn").value = "Hide Proof";
-        } else {
-            proof.style.display = "none";
-            document.getElementById("btn").value = "Show Proof";
-        }
-    });
-
-    document.getElementById("btn2").addEventListener("click", function(){
-        var proof = document.getElementById("proof");
-
-        if (proof.style.display == "none") {
-            proof.style.display = "block";
-            document.getElementById("btn").value = "Hide Proof";
-        } else {
-            proof.style.display = "none";
-            document.getElementById("btn").value = "Show Proof";
-        }
-    });
-</script>
 
 
 ### 2.1.10 The polar and singular value decompositions
@@ -804,9 +775,9 @@ $$
 
 If $$ A $$ is invertible, then $$ U $$ is unique.
 
-<input type="button" id ="polar-btn" value="Show Proof">
+<input type="button" class="show-hide-btn" id ="polar-btn" value="Show Proof">
 
-<div style="display: none;" id= "polar-proof">
+<div class="hideable h" id= "polar">
 <strong>Proof: </strong>
 <p> <script type="math/tex"> J </script> is a positive operator, so it has a
 spectral decomposition <script type="math/tex"> J = \sum_i \lambda_i | i \rangle \langle i |  </script>
@@ -873,38 +844,7 @@ same vectors, they are equal.
 </p>
 
 <p>A similar proof can be done for <script type="math/tex"> A = KU </script></p>.
-
-<br/>
-<input type="button" id ="polar-btn2" value="Hide Proof">
 </div>
-
-<script>
-document.getElementById("polar-btn").addEventListener("click", function(){
-    var proof = document.getElementById("polar-proof");
-
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("polar-btn").value = "Hide Proof";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("polar-btn").value = "Show Proof";
-    }
-});
-
-document.getElementById("polar-btn2").addEventListener("click", function(){
-    var proof = document.getElementById("polar-proof");
-
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("polar-btn").value = "Hide Proof";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("polar-btn").value = "Show Proof";
-    }
-});
-</script>
 
 #### Singular value decomposition
 A square matrix $$ A $$ can be written as the product
@@ -1143,9 +1083,9 @@ the state using exactly one measurement.
 If the set of state vectors is orthonormal, Bob can measure the system similar
 to how we measured in the computational basis in the last section.
 
-<input type="button" id="ortho-btn" value="Show How">
+<input class="show-hide-btn" type="button" id="ortho-btn" value="Show How">
 
-<div style="display: none;" id="ortho-content">
+<div class="hideable h" id="ortho">
 <p> Define the measurement operators
 <script type="math/tex; mode=display">
     M_i := \begin{cases}
@@ -1161,48 +1101,16 @@ We can see the probability of measuring the particular <script type="math/tex"> 
             = & 1
     \end{aligned}
 </script>
-
 </p>
-
-<br/>
-<input type="button" id="ortho-btn2" value="Hide How">
 </div>
-
-<script>
-document.getElementById("ortho-btn").addEventListener("click", function(){
-    var proof = document.getElementById("ortho-content");
-    
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("ortho-btn").value = "Hide How";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("ortho-btn").value = "Show How";
-    }
-});
-
-document.getElementById("ortho-btn2").addEventListener("click", function(){
-    var proof = document.getElementById("ortho-content");
-    
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("ortho-btn").value = "Hide How";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("ortho-btn").value = "Show How";
-    }
-});
-</script>
 
 If however there are any two vectors
 <script type="math/tex"> | \psi_1 \rangle, | \psi_2 \rangle  </script>
 in the set that are not orthogonal, there is no reliable way to distinguish them.
 
-<input type="button" id="nonortho-btn" value="Show Proof">
+<input class="show-hide-btn" type="button" id="nonortho-btn" value="Show Proof">
 
-<div style="display: none;" id="nonortho-content">
+<div class="hideable h" id="nonortho">
 <p>
 <script type="math/tex; mode=display"> 
     | \psi_2 \rangle = \alpha | \psi_1 \rangle + \beta | \phi \rangle \\
@@ -1248,38 +1156,7 @@ state was <script type="math/tex"> | \psi_j \rangle </script>.<br/>
 </script>
 This is a contradiction, and so no such measurement operators can be reliable.
 </p>
-
-<br/>
-<input type="button" id="nonortho-btn2" value="Hide Proof">
 </div>
-
-<script>
-document.getElementById("nonortho-btn").addEventListener("click", function(){
-    var proof = document.getElementById("nonortho-content");
-    
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("nonortho-btn").value = "Hide Proof";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("nonortho-btn").value = "Show Proof";
-    }
-});
-
-document.getElementById("nonortho-btn2").addEventListener("click", function(){
-    var proof = document.getElementById("nonortho-content");
-    
-    if (proof.style.display == "none") {
-        proof.style.display = "block";
-        document.getElementById("nonortho-btn").value = "Hide Proof";
-    } 
-    else {
-        proof.style.display = "none";
-        document.getElementById("nonortho-btn").value = "Show Proof";
-    }
-});
-</script>
 
 
 ### 2.2.5 Projective measurements
@@ -1853,7 +1730,9 @@ following theorem:
 > 1. $$ \text{tr}(\rho) = 1 $$ (Trace condition)
 > 2. $$ \rho $$ is a positive operator (Positivity condition)
 
-<div class="proof" id="thm-2.5">
+<input class="show-hide-btn" type="button" id="thm-2.5-btn" value="Show Proof">
+
+<div class="hideable h" id="thm-2.5">
 </div>
 
 With this characterization, we can reformulate the postulates of quantum
