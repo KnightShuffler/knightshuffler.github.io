@@ -58,4 +58,14 @@
 			"body" : "<script type=\"math/tex\"> $1 </script>$0",
 			"description": "Insert an html tag to insert a mathjax environment"
 	},
+
+	"proof": {
+		"prefix": "proof",
+		"description": "Insert a hideable section for a proof or something",
+		"body": ["<input class=\"show-hide-btn\" type=\"button\" id=\"$1-btn\" value=\"Show $2\">",
+				 "",
+				 "<div class=\"hideable h\" id=\"$1\">",
+				 "$0",
+				 "</div>"]
+	},
 }
