@@ -1733,6 +1733,64 @@ following theorem:
 <input class="show-hide-btn" type="button" id="thm-2.5-btn" value="Show Proof">
 
 <div class="hideable h" id="thm-2.5">
+1) Suppose <script type="math/tex"> \rho = \sum_i p_i | \psi_i \rangle \langle \psi_i |  </script>
+is a density operator.
+
+$$
+\begin{aligned}
+    \text{tr}(\rho) & = \sum_i p_i \text{tr}( | \psi_i \rangle \langle \psi_i | ) \\
+                    & = \sum_i p_i \sum_j \langle j | \psi_i \rangle \langle \psi_i | j \rangle
+\end{aligned} \\
+$$
+
+Let <script type="math/tex"> | \psi_i \rangle = \sum_j \alpha_{ij} | j \rangle  </script>
+where <script type="math/tex"> \sum_j |\alpha_{ij}|^2 = 1 </script> and <script type="math/tex"> | j \rangle  </script>
+are orthonormal.
+
+$$
+\begin{aligned}
+    \Rightarrow \text{tr}(\rho) & = \sum_i p_i \sum_j \alpha_{ij} \alpha_{ij}^* \\
+                                & = \sum_i p_i \sum_j |\alpha_{ij}|^2 \\
+                                & = \sum_i p_i \\
+                                & = 1
+\end{aligned}
+$$
+
+Let <script type="math/tex"> | \varphi \rangle  </script> be any vector in the state space.
+
+$$
+\begin{aligned}
+    \langle \varphi | \rho | \varphi \rangle    & = \sum_i p_i \langle \varphi | \psi_i \rangle \langle \psi_i | \varphi \rangle \\
+                                                & = \sum_i p_i | \langle \varphi | \psi_i \rangle |^2 \\
+                                                & \geq 0
+\end{aligned}
+$$
+
+Thus, <script type="math/tex"> \rho </script> is a positive operator with unit trace.<br><br>
+
+2) Conversely, let <script type="math/tex"> \rho </script> be a positive operator
+with unit trace. Since it is positive, it has a spectral decomposition:
+
+$$
+    \rho = \sum_j \lambda_j | j \rangle \langle j | 
+$$
+
+Where <script type="math/tex"> \lambda_j \geq 0 </script> and
+<script type="math/tex"> | j \rangle \langle j | </script> are orthonormal.<br>
+
+$$
+\begin{aligned}
+    \text{tr}(\rho) & = 1 \\
+    \Rightarrow \sum_j \langle j | \rho | j \rangle & = 1 \\
+    \Rightarrow \sum_j \langle j | (\sum_{j^\prime} \lambda_{j^\prime} | j^\prime \rangle \langle j^\prime) | j \rangle ) & = 1 \\
+    \Rightarrow \sum_{j=j^\prime} \lambda_j \langle j | j \rangle \langle j | j \rangle & = 1 \\
+    \Rightarrow \sum_j \lambda_j & = 1
+\end{aligned}
+$$
+
+Thus, we can treat <script type="math/tex"> \rho </script> as a density operator
+for the ensemble <script type="math/tex"> \{ \lambda_j , | j \rangle  \} </script>.<br>
+
 </div>
 
 With this characterization, we can reformulate the postulates of quantum
@@ -1782,6 +1840,15 @@ This reformulation is equivalent to the state vector approach and is more useful
 when describing  
 * systems whose state is not known
 * subsystems of composite quantum systems
+
+#### Mixed states vs. pure states
+Coming soon...
+
+#### The possible ensembles of a density operator
+Coming soon...
+
+#### Bloch sphere representation for mixed qubit states
+Coming soon...
 
 ### 2.4.3 The reduced density operator
 Coming soon...

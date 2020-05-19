@@ -1,3 +1,10 @@
+- date: "May 19, 2020"
+  update: "Nielsen and Chuang Section 2.4.2 content added"
+  notes: true
+
+- date: "Apr 30, 2020"
+  update: "Added hideable proofs to notes pages"
+
 - date: "Apr 26, 2020"
   update: "Nielsen and Chuang Section 2.4.1 content added"
   link: "/quantum-notes/books/nielsen-chuang/chapter-02/#24-the-density-operator"
