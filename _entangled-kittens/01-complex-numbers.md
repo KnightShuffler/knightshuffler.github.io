@@ -52,19 +52,10 @@ horizontal axis is called the real axis and the vertical axis is called the imag
 
 The point on the plane with Cartesian coordinates $$(a,b)$$ represents the complex number $$z=a+ib$$.
 
-\begin{figure}[h]
-    \centering 
-    \begin{tikzpicture}[scale=0.7]
-        \draw[<->] (-5,0) -- (5,0) node[anchor=north]{Re};
-        \draw[<->] (0,-5) -- (0,5) node[anchor=east]{Im};
-        \draw (0,0) -- (2,3) node[anchor=south]{$z=a+ib$};
-        \node[circle,draw,fill=black,inner sep=0pt,minimum size=3pt] (z) at (2,3){};
-        \draw[dashed] (2,0) node[anchor=north]{$a$} -- (2,3);
-        \draw[dashed] (0,3) node[anchor=east]{$b$} -- (2,3);
-        \node[anchor=north east] (o) at (0,0) {0};
-    \end{tikzpicture}
-    \caption{The complex plane}
-\end{figure}
+<figure>
+    <img src="/assets/entangled-kittens/complex-numbers/complex-plane.png" alt="The complex plane">
+    <figcaption>Fig. 1.1  - The complex plane</figcaption>
+</figure>
 
 ### Algebra of Complex Numbers
 #### Addition
@@ -113,23 +104,10 @@ $$ r = |z| = \sqrt{a^2 + b^2} $$
 
 $$ \phi = \tan^{-1}\left(\frac{b}{a}\right) $$
 
-
-\begin{figure}[h]
-    \centering 
-    \begin{tikzpicture}[scale=0.7]
-        \draw[<->] (-5,0) -- (5,0) node[anchor=north]{Re};
-        \draw[<->] (0,-5) -- (0,5) node[anchor=east]{Im};
-        \draw (0,0) -- (2,3) node[anchor=south]{$z$};
-        \node[circle,draw,fill=black,inner sep=0pt,minimum size=3pt] (z) at (2,3){};
-        \node[anchor=north east] (o) at (0,0) {0};
-        \draw (0.5, 0) arc (0:56.3:0.5);
-        \node[anchor=east](mod) at (1.3,2.1) {$r$};
-        \node[anchor=south west](phi) at (0.5,0) {$\phi$};
-        \draw[dashed] (2,0) node[anchor=north]{$r\cos\phi$} -- (2,3);
-        \draw[dashed] (0,3) node[anchor=east]{$r\sin\phi$} -- (2,3);
-    \end{tikzpicture}
-    \caption{Polar form of a complex number}
-\end{figure}
+<figure >
+    <img src="/assets/entangled-kittens/complex-numbers/polar-form.png" alt="Polar coordinates on the complex plane">
+    <figcaption>Fig. 1.2  - Polar form of a complex number</figcaption>
+</figure>
 
 ### Euler's Formula
 Complex numbers with $$|z| = 1$$ can be written $$ z = \cos\phi + i\sin\phi $$.
