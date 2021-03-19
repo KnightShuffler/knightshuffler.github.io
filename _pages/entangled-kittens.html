@@ -1,0 +1,19 @@
+---
+layout: archive 
+permalink: /entangled-kittens/
+title: Entangled Kittens
+---
+
+<p>
+<img src="/assets/images/logo.png" alt="Temporary Logo for Entangled Kittens" width="40%" style="float:left; margin-bottom: 1em; margin-right: 1em;">
+Entangled Kittens is a YouTube channel that I'm starting which is dedicated to teaching a course on quantum computing. You can access the 
+video scripts using the links below or <a href='https://github.com/KnightShuffler/Entangled-Kittens/blob/main/scripts/quantum-book.pdf' target="_blank"> click here </a> 
+to view all of them in a PDF.
+</p>
+
+<h2>Scripts</h2> 
+<ol>
+{% for chapter in site.entangled-kittens %}
+    <li><a href="{{ chapter.url }}" rel="permalink">{{chapter.title}}</a></li>
+{% endfor %}
+</ol>

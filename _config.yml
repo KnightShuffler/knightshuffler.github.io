@@ -134,6 +134,9 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/swagatks97"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCOz6xGy4im6ovLRHLHNUH1g"
 
 # Site Footer
 footer:
@@ -287,10 +290,12 @@ compress_html:
 
 # Collections
 collections:
-  backgrounds:
+  entangled-kittens:
     output: true
-  nielsen-chuang:
-    output: true
+  # backgrounds:
+  #   output: true
+  # nielsen-chuang:
+  #   output: true
 
 # Defaults
 defaults:
@@ -299,6 +304,7 @@ defaults:
       path: ""
       type: posts
     values:
+      mathjax: true
       layout: single
       author_profile: true
       read_time: true
@@ -312,29 +318,40 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # Entangled Kittens Blog Posts
+  - scope:
+      path: ""
+      type: "entangled-kittens"
+    values:
+      mathjax: true
+      permalink: /entangled-kittens/:path/
+      layout: math-page
+      author_profile: true
+      share: true
+      toc: true
   # math background notes
-  - scope:
-      path: ""
-      type: "backgrounds"
-    values:
-      mathjax: true
-      permalink: /quantum-notes/backgrounds/:path/
-      layout: math-page
-      author_profile: true
-      share: true
-      toc: true
-  # nielsen-chuang chapters
-  - scope:
-      path: ""
-      type: nielsen-chuang
-    values:
-      mathjax: true
-      permalink: /quantum-notes/books/nielsen-chuang/:path/
-      book: nielsen-chuang
-      layout: math-page
-      author_profile: true
-      share: true
-      toc: true
+  # - scope:
+  #     path: ""
+  #     type: "backgrounds"
+  #   values:
+  #     mathjax: true
+  #     permalink: /quantum-notes/backgrounds/:path/
+  #     layout: math-page
+  #     author_profile: true
+  #     share: true
+  #     toc: true
+  # # nielsen-chuang chapters
+  # - scope:
+  #     path: ""
+  #     type: nielsen-chuang
+  #   values:
+  #     mathjax: true
+  #     permalink: /quantum-notes/books/nielsen-chuang/:path/
+  #     book: nielsen-chuang
+  #     layout: math-page
+  #     author_profile: true
+  #     share: true
+  #     toc: true
 
 
 
